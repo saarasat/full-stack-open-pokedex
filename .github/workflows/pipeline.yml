@@ -20,7 +20,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BUMP: patch
           RELEASE_BRANCHES: master
-          DRY_RUN: true
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
