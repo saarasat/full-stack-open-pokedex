@@ -13,6 +13,15 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
+      - name: Bump version and push tag
+        uses: anothrNick/github-tag-action@1.26.0
+        if: ${{ github.event_name == 'push' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEFAULT_BUMP: patch
+          RELEASE_BRANCHES: master
+          DRY_RUN: true
+      - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: '12.x'
