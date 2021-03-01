@@ -48,5 +48,3 @@ jobs:
           healthcheck: "https://cicd-pokedex.herokuapp.com/health"
           checkstring: "ok"
           rollbackonhealthcheckfailed: true
-      # Skipping actions also supported by Github Actions now out-of-the-box
-      #https://github.blog/changelog/2021-02-08-github-actions-skip-pull-request-and-push-workflows-with-skip-ci/
