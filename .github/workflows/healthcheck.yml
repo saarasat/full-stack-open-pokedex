@@ -1,12 +1,9 @@
-name: Deployment pipeline
+name: Healthcheck
 
 on:
-  push:
-    branches:
-      - master
-  pull_request:
-    branches: [master]
-    types: [opened, synchronize]
+  schedule:
+    - cron: '*/15 * * * *'
+
 jobs:
   healthcheck:
     runs-on: ubuntu-18.04
