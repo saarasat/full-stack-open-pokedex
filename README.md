@@ -1,5 +1,7 @@
 # Full Stack open CI/CD
 
+The final two (11.21-11.22) exercises can be found at https://github.com/saarasat/fullstack_part11_extra.
+
 This repository is used for the CI/CD module of the Full stack open course
 
 Fork the repository to complete course exercises
