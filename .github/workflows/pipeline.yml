@@ -39,9 +39,11 @@ jobs:
           start: npm run start-prod
           wait-on: http://localhost:5000
       - name: deploy to Heroku
+        env: COMMIT_MESSAGES: ${{ toJson(github.event.commits.*.message) }}
         if: |
           ${{ github.event_name == 'push' }}
-          "!contains(join(github.event.commits.*.message), 'skip')"
+          "!contains(join($COMMIT_MESSAGES), 'skip')"
+        run: echo "$COMMIT_MESSAGES"
         uses: akhileshns/heroku-deploy@v3.11.10 # This is the action
         with:
           heroku_api_key: ${{secrets.HEROKU_TOKEN}}
